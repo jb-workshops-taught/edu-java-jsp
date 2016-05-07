@@ -1,4 +1,4 @@
-package com.codeforanyone.codergirl.edujavajsp.database;
+package com.codeforanyone.edujavajsp.database;
 
 import java.beans.PropertyVetoException;
 import java.io.IOException;

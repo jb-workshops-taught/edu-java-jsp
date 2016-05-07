@@ -1,4 +1,4 @@
-package com.codeforanyone.codergirl.edujavajsp;
+package com.codeforanyone.edujavajsp;
 
 import java.io.IOException;
 import java.io.PrintWriter;

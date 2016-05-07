@@ -1,4 +1,4 @@
-package com.codeforanyone.codergirl.edujavajsp;
+package com.codeforanyone.edujavajsp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

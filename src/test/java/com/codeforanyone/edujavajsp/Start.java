@@ -1,4 +1,4 @@
-package com.codeforanyone.codergirl.edujavajsp;
+package com.codeforanyone.edujavajsp;
 
 import org.eclipse.jetty.security.HashLoginService;
 import org.eclipse.jetty.server.Server;
