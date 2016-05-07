@@ -12,7 +12,7 @@ next to a URL, with a "Copy to Clipboard" button next to it.
 3. Push "Copy to Clipboard"
 4. In a terminal window (mac) or git-bash (windows), `cd` to
 the folder where you want your project to appear.
-5. Then run git clone <paste> (Notice your username in that address - not mine!) :
+5. Then run git clone (paste) (Notice your username in that address - not mine!) :
 
      `git clone git@github.com:yourusername/edu-java-jsp.git`
 
