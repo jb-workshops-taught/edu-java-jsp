@@ -47,7 +47,7 @@ optionally in folders within that).
 
 You will start jetty running, 
 
-    `test/main/java/com.codeforanyone.codergirl.edujavajsp/Start.java` (right click, Run as Java Application)
+    test/main/java/com.codeforanyone.codergirl.edujavajsp/Start.java (right click, Run as Java Application)
 
 and then go to:
 
