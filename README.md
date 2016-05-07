@@ -28,7 +28,7 @@ the folder where you want your project to appear.
 
 `test/main/java` - contains the jetty Start application for local testing, and may contain unit tests.
 
-`src/main/webapp/` - contains html content and jsps, plus the WEB-INF/web.xml file
+`src/main/webapp/` - contains html content and jsps, plus the `WEB-INF/web.xml` file
 
 `target/` - contains compiled code (excluded from git)
 
