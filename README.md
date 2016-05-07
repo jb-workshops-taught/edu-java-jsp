@@ -103,7 +103,7 @@ Commit your existing work first.  The project name change will be its own step i
 
 Then there are a few steps.
 
-### Eclipse Project Changes for Project Rename
+### 1. Eclipse Project Changes for Project Rename
 
 First, we'll Close the project in Eclipse (right click the project, choose Close Project).  
 Eclipse would just get confused during this renaming process anyway.
@@ -123,7 +123,7 @@ Next, look for any Java package names that contain the old name, and use the rig
 tool to choose a new name for those.  You might also need to modify `web.xml` to match if you
 renamed any of the packages that servlets are in.
 
-### Git Changes for Project Rename
+### 2. Git Changes for Project Rename
 
 Got it working?  Commit the changes, but don't push yet.
 
