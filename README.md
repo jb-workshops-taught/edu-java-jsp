@@ -14,7 +14,7 @@ next to a URL, with a "Copy to Clipboard" button next to it.
 the folder where you want your project to appear.
 5. Then run (Notice your username in that address - not mine!) :
 
-     git clone git@github.com:yourusername/edu-java-jsp.git
+     `git clone git@github.com:yourusername/edu-java-jsp.git`
 
 6. Then launch Eclipse.
 7. From the File menu, Import, then "Existing project into workspace".
