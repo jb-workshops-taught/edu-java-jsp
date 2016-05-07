@@ -94,6 +94,9 @@ create new connections; using a pool speeds up your app significantly.  So, one 
 the maven dependencies is a connection-pooling library, and a helper is provided to 
 make it easy for your code to get a connection from the pool.
 
+More details TBD.  # TODO
+
+
 ## How do I rename this project to something like web-pet-store?
 
 You've already done a fork and clone.  You have a copy of the code.  But the project name
