@@ -9,7 +9,7 @@ started.
 Look for the Fork button in the upper right of the web page.
 2. In mid-page, or the lower right, find the "SSH" or "HTTP" button
 next to a URL, with a "Copy to Clipboard" button next to it.
-3. Push Copy the Clipboard
+3. Push "Copy to Clipboard"
 4. In a terminal window (mac) or git-bash (windows), `cd` to
 the folder where you want your project to appear.
 5. Then run (Notice your username in that address - not mine!) :
