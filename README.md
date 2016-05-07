@@ -26,7 +26,7 @@ the folder where you want your project to appear.
 
 `src/main/resources` - contains properties files when needed
 
-`src/test/java` - contains the jetty Start application for local testing, and may contain unit tests.
+`test/main/java` - contains the jetty Start application for local testing, and may contain unit tests.
 
 `src/main/webapp/` - contains html content and jsps, plus the WEB-INF/web.xml file
 
