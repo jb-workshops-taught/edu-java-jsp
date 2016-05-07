@@ -43,7 +43,13 @@ view those.
 ## What does development workflow look like?
 
 You will create servlets in `src/main/java/your.package.name/` and jsps in `src/main/webapps/*.jsp` (or
-optionally in folders within that).  You will start jetty running, and go to:
+optionally in folders within that).  
+
+You will start jetty running, 
+
+    `test/main/java/com.codeforanyone.codergirl.edujavajsp/Start.java` (right click, Run as Java Application)
+
+and then go to:
 
      http://localhost:8080/
 
