@@ -46,7 +46,7 @@ view those.
 You will create servlets in `src/main/java/your.package.name/` and jsps in `src/main/webapps/*.jsp` (or
 optionally in folders within that).  You will start jetty running, and go to:
 
-    `http://localhost:8080/`
+     http://localhost:8080/
 
 in a web browser of your choosing.  As you modify servlets and jsps, jetty will automatically
 pick up most changes, if you just reload the web page.  If it fails to pick up a change, you
@@ -67,10 +67,10 @@ running web app.
 
 Periodically, as you finish a feature, you will want to save your progress:
 
-    `git add --all .`
-    `git status`
-    `git commit -m "Added feature blah blah blah" `
-    `git push`
+     git add --all .
+     git status
+     git commit -m "Added feature blah blah blah" 
+     git push
 
 ## How do I use a database with my app?
 
@@ -97,9 +97,9 @@ do it?
 
 Commit your existing work first.  The project name change will be its own step in git for simplicity.
 
-    `git add --all .`
-    `git commit -m "Finished blah blah feature"`
-    `git push`
+     git add --all .
+     git commit -m "Finished blah blah feature"
+     git push
 
 Then there are a few steps.
 
@@ -127,8 +127,8 @@ renamed any of the packages that servlets are in.
 
 Got it working?  Commit the changes, but don't push yet.
 
-    `git add --all .`
-    `git commit -m "Changed project name"`
+     git add --all .
+     git commit -m "Changed project name"
 
 Okay, now we need to repoint git to a new repo.
 
@@ -140,8 +140,8 @@ origin.
 Remember to modify the command below to set `yourusername` and `your-new-project-name` to
 something appropriate.
 
-    `git remote add origin git@github.com:yourusername/your-new-project-name.git`
-    `git push -u origin master`
+     git remote add origin git@github.com:yourusername/your-new-project-name.git
+     git push -u origin master
 
 The first line changes which remote git repository your project points to.  The second
 pushes your latest changes plus all the history to the new repo.  
