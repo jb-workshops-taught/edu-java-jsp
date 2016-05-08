@@ -94,7 +94,9 @@ create new connections; using a pool speeds up your app significantly.  So, one 
 the maven dependencies is a connection-pooling library, and a helper is provided to 
 make it easy for your code to get a connection from the pool.
 
-More details TBD.  # TODO
+The `DataSource` class in `com.codeforanyone.edujavajsp.database` demonstrates (in its main() method) 
+how to get a database connection from the pool and close it when you're done.  This same
+technique will work from a servlet or from a helper class.
 
 
 ## How do I rename this project to something like web-pet-store?
