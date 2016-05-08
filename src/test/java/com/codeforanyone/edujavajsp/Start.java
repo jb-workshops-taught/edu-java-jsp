@@ -1,6 +1,7 @@
 package com.codeforanyone.edujavajsp;
 
 import org.eclipse.jetty.security.HashLoginService;
+import org.eclipse.jetty.security.JDBCLoginService;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 
@@ -24,21 +25,16 @@ public class Start {
 		server.setStopAtShutdown(true);
 
 		// Configure a LoginService.
-		// Since this example is for our test webapp, we need to setup a
-		// LoginService so this shows how to create a very simple hashmap based
-		// one. The name of the LoginService needs to correspond to what is
-		// configured in the webapp's web.xml and since it has a lifecycle of
-		// its own we register it as a bean with the Jetty server object so it
-		// can be started and stopped according to the lifecycle of the server
-		// itself.
-		HashLoginService loginService = new HashLoginService();
-		loginService.setName("Test Realm");
-		loginService.setConfig("src/test/resources/realm.properties");
-		server.addBean(loginService);
+		// The name of the login service must match the Realm declared in web.xml
+		JDBCLoginService dbLoginService = new JDBCLoginService();
+		dbLoginService.setConfig("src/main/resources/jdbcRealm.properties");
+		dbLoginService.setName("My Java Project JDBC Login Realm");
+		server.addBean(dbLoginService);
 		
-		
-		// TODO: Use a JDBC Login Service with a couple of real users set up
+		// Authentication is currently using basic auth, rather than form-based.  There is much work
+		// to be done to use form-based auth and create pages for login, logout, etc.
 		// TODO: Create web pages for login, logout, sign up, forgot password, and profile
+		// Page on basic auth: http://blog.intelligencecomputing.io/middleware/3238/repost-how-to-configure-security-with-embedded-jetty
 
 		try {
 			System.out.println(">>> STARTING EMBEDDED JETTY SERVER. Click this window and press any key to stop.");

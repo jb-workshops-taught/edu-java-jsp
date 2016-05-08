@@ -5,14 +5,43 @@
 
 	<display-name>demo</display-name>
 
+    <!--  Makes a servlet exist by name -->
 	<servlet>
 		<servlet-name>HelloServlet</servlet-name>
 		<servlet-class>com.codeforanyone.edujavajsp.HelloServlet</servlet-class>
 	</servlet>
 
+    <!--  Matches a url pattern to a servlet that serves up content there -->
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
 	</servlet-mapping>
+
+    <!--  This is a secondary mapping for hello servlet so we can see the effects of login-required -->
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/admin/hello</url-pattern>
+	</servlet-mapping>
+
+	<!--  This tells the server what URLs are protected by requiring a login. -->
+	<security-constraint>
+		<display-name>Admin Area</display-name>
+		<web-resource-collection>
+			<web-resource-name>Admin Area</web-resource-name>
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+
+    <!--  This tells the server how to prompt the user for a password. -->
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>My Java Project JDBC Login Realm</realm-name>
+	</login-config>
 
 </web-app>
