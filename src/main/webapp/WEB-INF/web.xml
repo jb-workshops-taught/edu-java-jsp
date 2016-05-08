@@ -5,4 +5,14 @@
 
 	<display-name>demo</display-name>
 
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.codeforanyone.edujavajsp.HelloServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
 </web-app>
