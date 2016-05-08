@@ -35,6 +35,10 @@ public class Start {
 		loginService.setName("Test Realm");
 		loginService.setConfig("src/test/resources/realm.properties");
 		server.addBean(loginService);
+		
+		
+		// TODO: Use a JDBC Login Service with a couple of real users set up
+		// TODO: Create web pages for login, logout, sign up, forgot password, and profile
 
 		try {
 			System.out.println(">>> STARTING EMBEDDED JETTY SERVER. Click this window and press any key to stop.");
