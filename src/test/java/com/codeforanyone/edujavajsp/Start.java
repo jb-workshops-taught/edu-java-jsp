@@ -1,6 +1,5 @@
 package com.codeforanyone.edujavajsp;
 
-import org.eclipse.jetty.security.HashLoginService;
 import org.eclipse.jetty.security.JDBCLoginService;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
