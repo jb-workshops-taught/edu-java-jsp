@@ -4,6 +4,8 @@
 <body>
 <h1>Random Number Example</h1>
 
+  <img src="http://localhost:8080/imageservlet?imageid=5">
+
   <%
     double num = Math.random();
     if (num > 0.95) {

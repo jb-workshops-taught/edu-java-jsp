@@ -35,16 +35,7 @@ public class HelloServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		log.debug("Received a doPost() request");
-		super.doPost(req, resp);
+		doGet(req, resp);
 	}
 
-	/*
-	 * schema: javaproject
-	 * user: javadbuser
-	 * pass: javacoderocks
-	 * hibernate.connection.url=jdbc:mysql://localhost:3306/javaproject
-	 */
-	
-	
-	
 }

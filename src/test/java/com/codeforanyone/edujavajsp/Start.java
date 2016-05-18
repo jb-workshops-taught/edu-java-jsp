@@ -1,7 +1,10 @@
 package com.codeforanyone.edujavajsp;
 
+import org.apache.jasper.servlet.JspServlet;
 import org.eclipse.jetty.security.JDBCLoginService;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.DefaultServlet;
+import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
 
 public class Start {
@@ -14,26 +17,43 @@ public class Start {
 		bb.setServer(server);
 		bb.setContextPath("/");
 		bb.setWar("src/main/webapp");
+		bb.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern", ".*/[^/]*jstl.*\\.jar$");
 		server.setHandler(bb);
+
+		// JSP support
+		ServletHolder holderJsp = new ServletHolder("jsp",JspServlet.class);
+		holderJsp.setInitOrder(0);
+		
+		// Add Default Servlet (must be named "default") to help jsp work
+		ServletHolder holderDefault = new ServletHolder("default",DefaultServlet.class);
+		holderDefault.setInitParameter("resourceBase","src/main/webapp");
+		holderDefault.setInitParameter("dirAllowed","true");
+		bb.addServlet(holderDefault,"/");
+
 
 		// Turn down logging so it's less noisy.
 		server.setDumpAfterStart(false);
 		server.setDumpBeforeStop(false);
-		
+
 		// Stop jetty when we exit Eclipse.
 		server.setStopAtShutdown(true);
 
 		// Configure a LoginService.
-		// The name of the login service must match the Realm declared in web.xml
+		// The name of the login service must match the Realm declared in
+		// web.xml
 		JDBCLoginService dbLoginService = new JDBCLoginService();
 		dbLoginService.setConfig("src/main/resources/jdbcRealm.properties");
 		dbLoginService.setName("My Java Project JDBC Login Realm");
 		server.addBean(dbLoginService);
-		
-		// Authentication is currently using basic auth, rather than form-based.  There is much work
-		// to be done to use form-based auth and create pages for login, logout, etc.
-		// TODO: Create web pages for login, logout, sign up, forgot password, and profile
-		// Page on basic auth: http://blog.intelligencecomputing.io/middleware/3238/repost-how-to-configure-security-with-embedded-jetty
+
+		// Authentication is currently using basic auth, rather than form-based.
+		// There is much work
+		// to be done to use form-based auth and create pages for login, logout,
+		// etc.
+		// TODO: Create web pages for login, logout, sign up, forgot password,
+		// and profile
+		// Page on basic auth:
+		// http://blog.intelligencecomputing.io/middleware/3238/repost-how-to-configure-security-with-embedded-jetty
 
 		try {
 			System.out.println(">>> STARTING EMBEDDED JETTY SERVER. Click this window and press any key to stop.");
