@@ -18,6 +18,11 @@
   <%
     }
   %>
+  
+  <!-- This is an html comment block.  The sample.jsp is served 
+  to the web browser directly, without a servlet, so it lives under the webapp/ directory.
+  In contrast, the jsp's that are used from a servlet live under webapp/WEB-INF/ directory,
+  where the web browser cannot create a URL to load the jsp directly without its data prefilled. -->
 
 </body>
 </html>

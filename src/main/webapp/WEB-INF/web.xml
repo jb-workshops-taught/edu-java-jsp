@@ -5,7 +5,7 @@
 
 	<display-name>demo</display-name>
 
-    <!--  Makes a servlet exist by name -->
+	<!-- A servlet xml tag defines a servlet and gives it a short nickname -->
 	<servlet>
 		<servlet-name>HelloServlet</servlet-name>
 		<servlet-class>com.codeforanyone.edujavajsp.HelloServlet</servlet-class>
@@ -14,6 +14,8 @@
 		<servlet-name>CrazyWordsServlet</servlet-name>
 		<servlet-class>com.codeforanyone.edujavajsp.CrazyWordsServlet</servlet-class>
 	</servlet>
+
+	<!-- This is a special servlet that knows how to compile jsp pages. -->
 	<servlet id="jsp">
 		<servlet-name>jsp</servlet-name>
 		<servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
@@ -24,7 +26,8 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-    <!--  Matches a url pattern to a servlet that serves up content there -->
+	<!-- A servlet mapping matches a url pattern to which servlet should serve 
+		up that content -->
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/hello</url-pattern>
@@ -35,12 +38,14 @@
 		<url-pattern>/crazywords/*</url-pattern>
 	</servlet-mapping>
 
-    <!--  This is a secondary mapping for hello servlet so we can see the effects of login-required -->
+	<!-- This is a secondary mapping for hello servlet so we can see the effects 
+		of login-required -->
 	<servlet-mapping>
 		<servlet-name>HelloServlet</servlet-name>
 		<url-pattern>/admin/hello</url-pattern>
 	</servlet-mapping>
-	
+
+    <!--  more special mappings so jsp's work properly -->
 	<servlet-mapping>
 		<servlet-name>jsp</servlet-name>
 		<url-pattern>*.jsp</url-pattern>
@@ -51,9 +56,9 @@
 		<url-pattern>*.JSPF</url-pattern>
 		<url-pattern>*.JSPX</url-pattern>
 		<url-pattern>*.XSP</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
 
-	<!--  This tells the server what URLs are protected by requiring a login. -->
+	<!-- This tells the server what URLs are protected by requiring a login using BASIC auth. -->
 	<security-constraint>
 		<display-name>Admin Area</display-name>
 		<web-resource-collection>
@@ -68,7 +73,7 @@
 		</user-data-constraint>
 	</security-constraint>
 
-    <!--  This tells the server how to prompt the user for a password. -->
+	<!-- This tells the server how to prompt the user for a password using BAISC auth. -->
 	<login-config>
 		<auth-method>BASIC</auth-method>
 		<realm-name>My Java Project JDBC Login Realm</realm-name>
