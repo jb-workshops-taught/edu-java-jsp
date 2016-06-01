@@ -21,15 +21,14 @@ public class Start {
 		server.setHandler(bb);
 
 		// JSP support
-		ServletHolder holderJsp = new ServletHolder("jsp",JspServlet.class);
+		ServletHolder holderJsp = new ServletHolder("jsp", JspServlet.class);
 		holderJsp.setInitOrder(0);
-		
-		// Add Default Servlet (must be named "default") to help jsp work
-		ServletHolder holderDefault = new ServletHolder("default",DefaultServlet.class);
-		holderDefault.setInitParameter("resourceBase","src/main/webapp");
-		holderDefault.setInitParameter("dirAllowed","true");
-		bb.addServlet(holderDefault,"/");
 
+		// Add Default Servlet (must be named "default") to help jsp work
+		ServletHolder holderDefault = new ServletHolder("default", DefaultServlet.class);
+		holderDefault.setInitParameter("resourceBase", "src/main/webapp");
+		holderDefault.setInitParameter("dirAllowed", "true");
+		bb.addServlet(holderDefault, "/");
 
 		// Turn down logging so it's less noisy.
 		server.setDumpAfterStart(false);
@@ -46,21 +45,17 @@ public class Start {
 		dbLoginService.setName("My Java Project JDBC Login Realm");
 		server.addBean(dbLoginService);
 
-		// Authentication is currently using basic auth, rather than form-based.
-		// There is much work
-		// to be done to use form-based auth and create pages for login, logout,
-		// etc.
-
 		// TODO: Create web pages for login, logout, sign up, forgot password,
-		// and profile
+		// and profile.
+
 		// Page on basic auth:
 		// http://blog.intelligencecomputing.io/middleware/3238/repost-how-to-configure-security-with-embedded-jetty
 
 		try {
-			System.out.println(">>> STARTING EMBEDDED JETTY SERVER. Click this window and press any key to stop.");
+			System.out.println(">>> STARTING EMBEDDED JETTY 8 SERVER. Click this window and press any key to stop.");
 			server.start();
 			System.in.read();
-			System.out.println(">>> STOPPING EMBEDDED JETTY SERVER.");
+			System.out.println(">>> STOPPING EMBEDDED JETTY 8 SERVER.");
 			server.stop();
 
 			// The use of server.join() the will make the current thread join
