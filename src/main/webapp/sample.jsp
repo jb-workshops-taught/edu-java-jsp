@@ -4,7 +4,7 @@
 <body>
 <h1>Random Number Example</h1>
 
-  <img src="http://localhost:8080/lolcats/show/image?id=1" width="300">
+  <img src="<%=request.getContextPath() %>lolcats/show/image?id=1" width="300">
 
   <%
     double num = Math.random();

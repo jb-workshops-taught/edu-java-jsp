@@ -264,3 +264,21 @@ http request and response activities happening in your browser, including networ
 javascript behaviors and errors, and lots of other developer-focused stuff.  You can google for these tools to
 learn how to use them to troubleshoot your web pages.  They go well above and beyond "view HTML source".
 
+# Misc Tech Notes
+
+Some people want to run this with Tomcat.  I recommend Tomcat 8 as best matching the
+servlet 3.0 API version that this example code is written for.
+
+Tomcat wants Java installed and configured in the JAVA_HOME environment 
+variable.  Mac OS X has a weird way of installing Java, so there's a 
+trick to finding the latest.  Put the following into your ~/.bash_profile 
+and then start a new terminal window:
+
+    export JAVA_HOME=$(/usr/libexec/java_home)
+
+Additionally (regardless of Windows or Mac), Tomcat's manager app GUI requires
+that you set up a username and password in a server config file, before you
+can use it.  (This is for security.)  See the tomcat docs for manager-gui role
+for details.
+
+

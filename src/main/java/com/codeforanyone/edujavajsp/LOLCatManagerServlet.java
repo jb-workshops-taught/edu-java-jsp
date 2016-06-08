@@ -135,7 +135,7 @@ public class LOLCatManagerServlet extends HttpServlet {
 
 		// Redirect to a GET so if the user presses reload we don't get a
 		// duplicate image POSTed.
-		resp.sendRedirect("/lolcats/manage/aftersave?result=" + URLEncoder.encode(result, "UTF8"));
+		resp.sendRedirect(req.getContextPath() + "lolcats/manage/aftersave?result=" + URLEncoder.encode(result, "UTF8"));
 
 	}
 

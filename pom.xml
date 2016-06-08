@@ -5,7 +5,7 @@
 	<groupId>com.codeforanyone.codergirl</groupId>
 	<artifactId>edu-java-jsp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>edu-java-jsp</name>
 	<url>http://maven.apache.org</url>
@@ -62,6 +62,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+		<defaultGoal>clean package</defaultGoal>
 		<resources>
 			<resource>
 				<filtering>false</filtering>
@@ -95,5 +96,31 @@
 			</testResource>
 		</testResources>
 
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.8</source> <!--  ensure Java 8 as minimum for compatibility -->
+					<target>1.8</target>
+				</configuration>
+				<executions>
+					<execution>
+						<id>default-compile</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>default-testCompile</id>
+						<phase>test-compile</phase>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

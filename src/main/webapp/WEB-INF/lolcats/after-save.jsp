@@ -6,6 +6,6 @@
 
 <p><%=request.getAttribute("result") %></p>
 
-<p><a href="/lolcats/manage">Go back to the list.</a></p>
+<p><a href="<%=request.getContextPath() %>/lolcats/manage">Go back to the list.</a></p>
 
 </body></html>
