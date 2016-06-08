@@ -281,4 +281,19 @@ that you set up a username and password in a server config file, before you
 can use it.  (This is for security.)  See the tomcat docs for manager-gui role
 for details.
 
+You have the option in Eclipse to "Run on Server" and can choose an Apache Tomcat 8 server.
+This should "just work."
+
+To deploy to Tomcat on another machine, you'll need a war file.  Go to the pom.xml, right 
+click, Run As, Maven Build.  You don't have to give a Goal because there's a default
+goal of `clean` and `package` already set in the pom.xml.  Just tell it to Run.
+Then watch the console window; you should see this at the end:
+
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+
+Also notice the `target/edu-java-jsp-0.0.1-SNAPSHOT.war` file produced.  You'll 
+probably want to give that a simpler name like `edujsp.war` before you deploy to 
+tomcat, because whatever you name the file will become the ContextPath in the url (minus `.war`).
 

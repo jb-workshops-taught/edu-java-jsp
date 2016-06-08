@@ -15,7 +15,8 @@ public class Start {
 		// Tell it where to find the code and jsps relative to our project.
 		WebAppContext bb = new WebAppContext();
 		bb.setServer(server);
-		bb.setContextPath("/");
+		//bb.setContextPath("/edujsp");
+		bb.setContextPath("");
 		bb.setWar("src/main/webapp");
 		bb.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern", ".*/[^/]*jstl.*\\.jar$");
 		server.setHandler(bb);
